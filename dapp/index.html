@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Expense Tracker</title>    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/web3/dist/web3.min.js"></script>
+    <script type="text/javascript" src="js/configs/web3_config.js"></script>
+    <script type="text/javascript" src="js/configs/contracts_config.js"></script>
+    <script type="text/javascript" src="js/operations/index.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+<body>
+    <h1> Expense Tracker (HTML, CSS, Web3)</h1>
+    <p><em>Mandatory fields are marked with *</em></p>
+    <div class="container">
+        <div>
+            <form id="myForm">
+            <div class="form-control">
+                <label htmlFor="text">Add Account Address*</label>
+                <input
+                    id="account"
+                    type="text"
+                    value=""
+                    placeholder="Enter address..."
+                    required
+                    
+                />
+                </div>
+        </div>
+        <div>
+            <div>
+                <button class="btn" type="button" onclick="getAccountBalance()" >Get Balance and Tx History</button>
+                
+                <p id="balance">  Your Previous Balance Appears Here on Button Click!</p>
+            </div>
+        </div>
+        <div>
+            <h3>History</h3>
+            <ul class="list" id="myUl">
+               
+            </ul>
+        </div>
+    </form>
+        <div>
+            <h3>Add new transaction</h3>
+            <form id="myForm">
+                <div class="form-control">
+                <label htmlFor="text">Text*</label>
+                <input
+                    id="text"
+                    type="text"
+                    placeholder="Enter text..."
+                    required
+                />
+                </div>
+                <div class="form-control">
+                <label htmlFor="amount">
+                    Amount* <br />
+                    (negative -> expense, positive -> income)
+                </label>
+                <input
+                    id = "value"
+                    type="number"
+                    placeholder="Enter amount..."
+                    required
+                />
+                </div>
+                <button class="btn" type="button" onclick="onSubmit()" ><strong> Add Transaction</strong></button>
+            </form>
+        </div>
+      </div>
+</body>
+</html>
